@@ -1,0 +1,148 @@
+:root {
+    --cor-principal: #f59e0b;
+    --cor-principal-hover: #d97706;
+    --cor-texto-escuro: #1f2937;
+    --cor-texto-claro: #4b5563;
+}
+
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+    color: #374151;
+}
+
+.container{
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Cabeçalho */
+
+.cabecalho{
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.cabecalho .container{
+    position: relative;
+}
+
+.navegacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+    text-decoration: none;
+}
+
+.menu-principal{
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+}
+
+.menu-link{
+    color: var(--cor-texto-claro);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.menu-link:hover{
+    color: var(--cor-principal);
+}
+
+.botao-login{
+    display: none; 
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3 ease;
+    text-decoration: none;
+}
+
+.botao-login:hover{
+    background-color: var(--cor-principal-hover);
+}
+
+.botao-menu-mobile{
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #374151;
+    z-index: 60;
+}
+
+.menu-mobile-ativo {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-top: 1px solid #e5e7eb;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* Seção Hero */
+
+.secao-hero{
+    position: relative;
+    height: 70vh;
+    background-image: url(/img/img-cachorro-principal.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.secao-hero-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.secao-hero-conteudo{
+    position: relative;
+    z-index: 10;
+    padding: 0 1rem;
+}
+
+.titulo-principal{
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.titulo-principal span{
+    color: #fbbf24;
+}
