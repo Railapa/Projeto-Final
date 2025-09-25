@@ -21,6 +21,26 @@ body{
     padding-right: 1.5rem;
 }
 
+/* Estilos reutilizáveis */
+.titulo-secao {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.titulo-secao span {
+    color: var(--cor-principal);
+}
+
+.subtitulo-secao {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: #6b7280;
+}
+
 /* Cabeçalho */
 
 .cabecalho{
@@ -195,7 +215,7 @@ body{
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.sobre-conteudo .titulo-secao{
+.sobre-conteudo .titulo-secao {
     text-align: left;
 }
 
@@ -223,33 +243,23 @@ body{
     color: white;
 }
 
+/* Seção Adoação */
 
-.secao-adoacao{
+.secao-adocao{
     padding: 4rem 0;
 }
 
-.carrossel{
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.carrossel-viewport{
-    overflow: hidden;
-}
-
-.carrossel-trilha{
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.adocao-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .animal-card{
-    flex-shrink: 0;
-    width: 100%;
-    margin: 0 1rem;
     background-color: white;
     border-radius: 0.75rem;
-    box-shadow: 0 4ox 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .animal-imagem{
@@ -279,17 +289,21 @@ body{
     width: 100%;
     text-align: center;
     background-color: var(--cor-principal);
-    padding: 0.75rem;
-    border-radius: 9999px;
-    color: white;
     text-decoration: none;
+    color: white;
     font-weight: 600;
-    transition: background-color 0.3 ease;
+    border-radius: 9999px;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
 }
 
 .botao-adotar:hover{
     background-color: var(--cor-principal-hover);
 }
+
+
+
+
 
 
 

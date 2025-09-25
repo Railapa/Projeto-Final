@@ -3,73 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adote um Amigo.</title>
+    <title>Adote um Amigo</title>
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/index.js"></script>
 </head>
 <body>
+    <!-- Cabeçalho e Menu de Navegação -->
     <header class="cabecalho">
         <div class="container">
             <nav class="navegacao">
                 <a href="#" class="logo">Adote um Amigo <span>🐾</span></a>
                 <ul class="menu-principal" id="menu-navegacao">
-                    <li><a class="menu-link" href="#">Home</a></li>
-                    <li><a class="menu-link" href="#sobre">Sobre</a></li>
-                    <li><a class="menu-link" href="#adotar">Adotar</a></li>
-                    <li><a class="menu-link" href="#contato">Contato</a></li>
-                    <li><a class="botao-login" href="#">Login</a></li>
+                    <li><a href="#" class="menu-link">Home</a></li>
+                    <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                    <li><a href="#adotar" class="menu-link">Adotar</a></li>
+                    <li><a href="#contato" class="menu-link">Contato</a></li>
+                    <li><a href="#" class="botao-login">Login</a></li>
                 </ul>
                 <button class="botao-menu-mobile" id="botao-menu-mobile"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
             </nav>
         </div>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main>
-        <!-- Seção Boas-Vindas -->
+        <!-- Seção Hero (Boas-Vindas) -->
         <section class="secao-hero">
             <div class="secao-hero-overlay"></div>
             <div class="secao-hero-conteudo">
                 <h1 class="titulo-principal">Encontre o seu <span>novo melhor amigo</span> hoje mesmo.</h1>
                 <p class="subtitulo">Ajudamos centenas de animais a encontrar um lar seguro e feliz. A sua nova alegria pode estar a um clique de distância.</p>
-                <a href="#adotar" class="botao-principal">Ver animais disponiveis</a>
+                <a href="#adotar" class="botao-principal">Ver Animais Disponíveis</a>
             </div>
         </section>
-        <!-- Seção Sobre -->
 
+        <!-- Seção Sobre Nós -->
         <section id="sobre" class="secao-sobre">
             <div class="container">
                 <div class="sobre-grid">
-                    <img class="sobre-imagem" src="/img/img-gato-sobre-nos.avif" alt="">
+                    <img src="/img/img-gato-sobre-nos.avif" alt="" class="sobre-imagem">
                     <div class="sobre-conteudo">
                         <h2 class="titulo-secao">Quem <span>Somos</span></h2>
-                        <p class="texto-secao">"Adote um Amigo" nasceu do amor incondicional pelos animais. Somos uma organização sem fins lucrativos dedicado a resgatar, cuidar e encontrar lares permanentes para cães e gatos em situação de vulnerabilidade. Acreditamos que todo animal precisa de uma segunda oportunidade</p>
-                        <p class="texto-secao">A nossa equipe é formada por voluntários apaixonados que trabalham incasavelmente para garantir o bem-estar de cada animal que passa pelas nossas portas. Junte-se a nós nessa causa!</p>
-                        <a href="" class="botao-secundario">Saber Mais</a>
+                        <p class="texto-secao">"Adote um Amigo" nasceu do amor incondicional pelos animais. Somos uma organização sem fins lucrativos dedicada a resgatar, cuidar e encontrar lares permanentes para cães e gatos em situação de vulnerabilidade. Acreditamos que todo o animal merece uma segunda oportunidade.</p>
+                        <p class="texto-secao">A nossa equipe é formada por voluntários apaixonados que trabalham incansavelmente para garantir o bem-estar de cada animal que passa pelas nossas portas. Junte-se a nós nesta causa!</p>
+                        <a href="#" class="botao-secundario">Saber Mais</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Adoação -->
-
-        <section id="adotar" class="secao-adotar">
+        <!-- Seção Animais para Adoção -->
+        <section id="adotar" class="secao-adocao">
             <div class="container">
                 <h2 class="titulo-secao">Nossos <span>Amigos</span></h2>
-                <p class="subtitulo-secao">Navegue com as setas para conhecer alguns dos animais que esperam por um lar.</p>
-                <div class="carrossel">
-                    <button class="carrosel-botao carrossel-botao--esquerda is-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-                    <div class="carrossel-viewport">
-                        <div class="carrossel-trilha">
-                            <div class="animal-card"><img src="/img/img-rex.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Rex</h3><p class="animal-detalhes">Macho • 2 anos • Vira-lata</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                                <div class="animal-card"><img src="/img/img-mimi.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Mimi</h3><p class="animal-detalhes">Fêmea • 1 ano • Siamês</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                                <div class="animal-card"><img src="/img/img-thor.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Thor</h3><p class="animal-detalhes">Macho • 3 anos • Labrador</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                                <div class="animal-card"><img src="/img/img-luana.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Luna</h3><p class="animal-detalhes">Fêmea • 5 meses • Angorá</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                        </div>
-                    </div>
-                    <button class="carrossel-botao carrossel-botao--direita"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-                </div>
+                <p class="subtitulo-secao">Conheça alguns dos animais que esperam por um lar.</p>
+                <div class="adocao-grid">
+                    <div class="animal-card"><img src="/img/img-rex.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Rex</h3><p class="animal-detalhes">Macho • 2 anos • Vira-lata</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
+                    <div class="animal-card"><img src="/img/img-mimi.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Mimi</h3><p class="animal-detalhes">Fêmea • 1 ano • Siamês</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
+                    <div class="animal-card"><img src="/img/img-thor.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Thor</h3><p class="animal-detalhes">Macho • 3 anos • Labrador</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
+                    <div class="animal-card"><img src="/img/img-luana.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Luna</h3><p class="animal-detalhes">Fêmea • 5 meses • Angorá</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
+                    <div class="animal-card"><img src="img/img-bolinha.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Bolinha</h3><p class="animal-detalhes">Macho • 5 anos • Pug</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
             </div>
         </section>
-    </main>
 </body>
 </html>
