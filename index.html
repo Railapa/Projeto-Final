@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adote um Amigo</title>
+    <title>Adote um Amigo - Adoção de Animais</title>
+    <!-- Usando a fonte Inter, que é moderna e legível -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/index.js"></script>
 </head>
 <body>
+
     <!-- Cabeçalho e Menu de Navegação -->
     <header class="cabecalho">
         <div class="container">
@@ -25,8 +30,8 @@
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main>
+    <!-- Conteúdo Principal visível por defeito -->
+    <main id="conteudo-principal">
         <!-- Seção Hero (Boas-Vindas) -->
         <section class="secao-hero">
             <div class="secao-hero-overlay"></div>
@@ -41,29 +46,162 @@
         <section id="sobre" class="secao-sobre">
             <div class="container">
                 <div class="sobre-grid">
-                    <img src="/img/img-gato-sobre-nos.avif" alt="" class="sobre-imagem">
+                    <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?q=80&w=1974&auto=format&fit=crop" alt="Mulher feliz a abraçar um gato branco" class="sobre-imagem">
                     <div class="sobre-conteudo">
                         <h2 class="titulo-secao">Quem <span>Somos</span></h2>
                         <p class="texto-secao">"Adote um Amigo" nasceu do amor incondicional pelos animais. Somos uma organização sem fins lucrativos dedicada a resgatar, cuidar e encontrar lares permanentes para cães e gatos em situação de vulnerabilidade. Acreditamos que todo o animal merece uma segunda oportunidade.</p>
-                        <p class="texto-secao">A nossa equipe é formada por voluntários apaixonados que trabalham incansavelmente para garantir o bem-estar de cada animal que passa pelas nossas portas. Junte-se a nós nesta causa!</p>
+                        <p class="texto-secao">A nossa equipa é formada por voluntários apaixonados que trabalham incansavelmente para garantir o bem-estar de cada animal que passa pelas nossas portas. Junte-se a nós nesta causa!</p>
                         <a href="#" class="botao-secundario">Saber Mais</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Animais para Adoção -->
+        <!-- Seção Animais para Adoção (Carrossel) -->
         <section id="adotar" class="secao-adocao">
             <div class="container">
                 <h2 class="titulo-secao">Nossos <span>Amigos</span></h2>
-                <p class="subtitulo-secao">Conheça alguns dos animais que esperam por um lar.</p>
-                <div class="adocao-grid">
-                    <div class="animal-card"><img src="/img/img-rex.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Rex</h3><p class="animal-detalhes">Macho • 2 anos • Vira-lata</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                    <div class="animal-card"><img src="/img/img-mimi.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Mimi</h3><p class="animal-detalhes">Fêmea • 1 ano • Siamês</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                    <div class="animal-card"><img src="/img/img-thor.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Thor</h3><p class="animal-detalhes">Macho • 3 anos • Labrador</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                    <div class="animal-card"><img src="/img/img-luana.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Luna</h3><p class="animal-detalhes">Fêmea • 5 meses • Angorá</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
-                    <div class="animal-card"><img src="img/img-bolinha.jpg" alt="" class="animal-imagem"><div class="animal-info"><h3 class="animal-nome">Bolinha</h3><p class="animal-detalhes">Macho • 5 anos • Pug</p><a href="#" class="botao-adotar">Quero Adotar</a></div></div>
+                <p class="subtitulo-secao">Navegue com as setas para conhecer alguns dos animais que esperam por um lar.</p>
+                
+                <div class="carrossel">
+                    <button class="carrossel-botao carrossel-botao--esquerda is-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    
+                    <div class="carrossel-viewport">
+                        <ul class="carrossel-trilha">
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=1974&auto=format&fit=crop" alt="Foto do Rex, um cão a sorrir" class="animal-imagem">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Rex</h3>
+                                        <p class="animal-detalhes">Macho • 2 anos • Vira-lata</p>
+                                        <a href="#" class="botao-adotar" data-animal="rex">Quero Adotar</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?q=80&w=2080&auto=format&fit=crop" alt="Foto da Mimi, uma gata com óculos escuros" class="animal-imagem">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Mimi</h3>
+                                        <p class="animal-detalhes">Fêmea • 1 ano • Siamês</p>
+                                        <a href="#" class="botao-adotar" data-animal="mimi">Quero Adotar</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop" alt="Foto do Thor, um cão Labrador" class="animal-imagem">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Thor</h3>
+                                        <p class="animal-detalhes">Macho • 3 anos • Labrador</p>
+                                        <a href="#" class="botao-adotar" data-animal="thor">Quero Adotar</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?q=80&w=1974&auto=format&fit=crop" alt="Foto do Bolinha, um cão da raça Pug" class="animal-imagem">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Bolinha</h3>
+                                        <p class="animal-detalhes">Macho • 5 anos • Pug</p>
+                                        <a href="#" class="botao-adotar" data-animal="bolinha">Quero Adotar</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/8931752/pexels-photo-8931752.jpeg" alt="Foto da Nina, uma gata Persa" class="animal-imagem">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Nina</h3>
+                                        <p class="animal-detalhes">Fêmea • 2 anos • Persa</p>
+                                        <a href="#" class="botao-adotar" data-animal="nina">Quero Adotar</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="carrossel-botao carrossel-botao--direita">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
             </div>
         </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="secao-contato">
+           <div class="container">
+                <h2 class="titulo-secao">Fale <span>Connosco</span></h2>
+                <p class="subtitulo-secao">Tem alguma dúvida, sugestão ou quer saber mais sobre voluntariado? Preencha o formulário abaixo e entraremos em contacto.</p>
+                <form class="formulario-contato">
+                    <div class="campo-grupo"><label for="nome" class="rotulo-form">Nome</label><input type="text" id="nome" name="nome" class="campo-form" placeholder="Digite o seu nome completo"></div>
+                    <div class="campo-grupo"><label for="email" class="rotulo-form">Email</label><input type="email" id="email" name="email" class="campo-form" placeholder="exemplo@email.com"></div>
+                    <div class="campo-grupo campo-largura-total"><label for="assunto" class="rotulo-form">Assunto</label><input type="text" id="assunto" name="assunto" class="campo-form" placeholder="Ex: Dúvida sobre o Rex"></div>
+                    <div class="campo-grupo campo-largura-total"><label for="mensagem" class="rotulo-form">Mensagem</label><textarea id="mensagem" name="mensagem" rows="5" class="campo-form" placeholder="Escreva aqui a sua mensagem..."></textarea></div>
+                    <div class="campo-grupo campo-largura-total"><button type="submit" class="botao-enviar">Enviar Mensagem</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- PÁGINA DE DETALHES DO ANIMAL (Começa escondida) -->
+    <div id="conteudo-detalhe">
+        <div class="container">
+            <a href="#" id="botao-voltar" style="text-decoration: none; color: var(--cor-principal); font-weight: 600; margin: 2rem 0; display: inline-block;">&larr; Voltar para a lista</a>
+            <div class="detalhe-grid">
+                <!-- Coluna da Esquerda: Galeria de Imagens (será preenchida por JS) -->
+                <div class="galeria-animal">
+                    <div class="imagem-principal-container">
+                        <img src="" alt="Imagem principal do animal" id="detalhe-imagem-principal">
+                    </div>
+                    <div class="galeria-miniaturas" id="detalhe-miniaturas">
+                        <!-- Miniaturas serão inseridas aqui pelo JavaScript -->
+                    </div>
+                </div>
+                <!-- Coluna da Direita: Informações do Animal (será preenchida por JS) -->
+                <div class="info-animal">
+                    <h1 class="info-animal-nome" id="detalhe-nome"></h1>
+                    <div class="info-animal-tags" id="detalhe-tags"></div>
+                    <h2 class="info-animal-subtitulo">A minha história</h2>
+                    <p class="info-animal-texto" id="detalhe-historia"></p>
+                    <h2 class="info-animal-subtitulo">Detalhes</h2>
+                    <ul class="info-animal-lista" id="detalhe-lista"></ul>
+                    <a href="#contato" class="botao-adotar-detalhe" id="detalhe-botao-adotar">Quero Adotar!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grid">
+                <div>
+                    <h3 class="rodape-logo">Adote um Amigo <span>🐾</span></h3>
+                    <p class="rodape-descricao">A transformar vidas, uma patinha de cada vez. Encontre o seu companheiro fiel e mude o mundo dele para sempre.</p>
+                </div>
+                <div>
+                    <h4 class="rodape-titulo-secao">Links Rápidos</h4>
+                    <ul class="rodape-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#adotar">Adotar</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="rodape-titulo-secao">Siga-nos</h4>
+                    <div class="rodape-social">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-copyright"><p>&copy; 2024 Adote um Amigo. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
 </body>
 </html>
