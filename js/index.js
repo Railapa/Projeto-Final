@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     historia: "Fui resgatado de uma situação de negligência, mas nunca perdi a minha alegria de viver! Sou um cão extremamente leal, brincalhão e adoro correr atrás de bolas. O meu passatempo favorito é receber festas na barriga e dar longos passeios no parque. Procuro uma família ativa que me possa dar todo o amor e atenção que mereço.",
                     detalhes: ["Vacinado", "Desparasitado", "Castrado", "Dá-se bem com outros cães", "Dá-se bem com crianças"],
                     imagens: [
-                        'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=1974&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2070&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?q=80&w=1974&auto=format&fit=crop'
+                        'https://images.pexels.com/photos/16622616/pexels-photo-16622616.jpeg',
+                        'https://images.pexels.com/photos/16622600/pexels-photo-16622600.jpeg',
+                        'https://images.pexels.com/photos/16622672/pexels-photo-16622672.jpeg'
                     ]
                 },
                 mimi: {
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     historia: "Sou uma gatinha muito doce e um pouco tímida no início, mas depois de ganhar confiança, adoro um bom colo e um carinho atrás das orelhas. Gosto de observar o movimento pela janela e de longas sestas ao sol. Sou a companhia perfeita para quem procura uma amiga tranquila e amorosa.",
                     detalhes: ["Vacinada", "Desparasitada", "Castrada", "Prefere ser filha única"],
                     imagens: [
-                        'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?q=80&w=2080&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1513360371669-443f07a48f8d?q=80&w=2070&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1935&auto=format&fit=crop'
+                        'https://images.pexels.com/photos/18160469/pexels-photo-18160469.jpeg',
+                        'https://images.pexels.com/photos/33202406/pexels-photo-33202406.jpeg',
+                        'https://images.pexels.com/photos/10485356/pexels-photo-10485356.jpeg'
                     ]
                 },
                 thor: {
@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     historia: "Sou um grandalhão com um coração de ouro. Adoro pessoas, festas e brincadeiras. Sou um pouco trapalhão por causa do meu tamanho, mas sou todo amor. Dou-me bem com toda a gente e só quero uma família que tenha espaço e energia para acompanhar o meu ritmo. Prometo ser o seu melhor amigo e protetor.",
                     detalhes: ["Vacinado", "Desparasitado", "Castrado", "Dá-se bem com crianças"],
                     imagens: [
-                        'https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1974&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?q=80&w=1976&auto=format&fit=crop'
+                        'https://images.pexels.com/photos/8850585/pexels-photo-8850585.jpeg',
+                        'https://images.pexels.com/photos/16219483/pexels-photo-16219483.jpeg',
+                        'https://images.pexels.com/photos/9470881/pexels-photo-9470881.jpeg'
                     ]
                 },
                 bolinha: {
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     historia: "A vida para mim é uma longa sesta interrompida por petiscos. Sou um perito em encontrar o lugar mais confortável da casa e ronco como um trator. Se procura um companheiro para maratonas de séries, sou o seu cão ideal. A minha maior aventura é ir da cama para a tigela de comida.",
                     detalhes: ["Vacinado", "Desparasitado", "Castrado", "Dá-se bem com todos"],
                     imagens: [
-                        'https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?q=80&w=1974&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1575425186775-b8de9a427e67?q=80&w=1974&auto=format&fit=crop',
-                        'https://images.unsplash.com/photo-1594167383428-97103855a152?q=80&w=1974&auto=format&fit=crop'
+                        'https://images.pexels.com/photos/1289557/pexels-photo-1289557.jpeg',
+                        'https://images.pexels.com/photos/33870418/pexels-photo-33870418.jpeg',
+                        'https://images.pexels.com/photos/1591939/pexels-photo-1591939.jpeg'
                     ]
                 },
                 nina: {
