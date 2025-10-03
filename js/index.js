@@ -163,9 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "Fui resgatado de uma situação de negligência, mas nunca perdi minha alegria de viver! Sou um cão extremamente leal, brincalhão e adoro correr atrás de bolas. Meu passatempo favorito é receber carinho na barriga e dar longos passeios no parque. Procuro uma família ativa que possa me dar todo o amor e atenção que mereço.",
             detalhes: ["Vacinado", "Vermifugado", "Castrado", "Sociável com outros cães", "Sociável com crianças"],
             imagens: [
-                'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2070&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?q=80&w=1974&auto=format&fit=crop'
+                'https://images.pexels.com/photos/16622616/pexels-photo-16622616.jpeg',
+                'https://images.pexels.com/photos/16622600/pexels-photo-16622600.jpeg',
+                'https://images.pexels.com/photos/16622672/pexels-photo-16622672.jpeg'
             ]
         },
         mimi: {
@@ -174,9 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "Sou uma gatinha muito doce e um pouco tímida no início, mas depois de ganhar confiança, adoro um bom colo e um carinho atrás das orelhas. Gosto de observar o movimento pela janela e de longas sonecas ao sol. Sou a companhia perfeita para quem procura uma amiga tranquila e amorosa.",
             detalhes: ["Vacinada", "Vermifugada", "Castrada", "Prefere ser filha única"],
             imagens: [
-                'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?q=80&w=2080&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1513360371669-443f07a48f8d?q=80&w=2070&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1935&auto=format&fit=crop'
+                'https://images.pexels.com/photos/18160469/pexels-photo-18160469.jpeg',
+                'https://images.pexels.com/photos/33202406/pexels-photo-33202406.jpeg',
+                'https://images.pexels.com/photos/10485356/pexels-photo-10485356.jpeg'
             ]
         },
         thor: {
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "Sou um grandalhão com um coração de ouro. Adoro pessoas, festas e brincadeiras. Sou um pouco desajeitado por causa do meu tamanho, mas sou todo amor. Me dou bem com todo mundo e só quero uma família que tenha espaço e energia para acompanhar meu ritmo. Prometo ser seu melhor amigo e protetor.",
             detalhes: ["Vacinado", "Vermifugado", "Castrado", "Sociável com crianças"],
             imagens: [
-                'https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?q=80&w=1976&auto=format&fit=crop'
+                'https://images.pexels.com/photos/8850585/pexels-photo-8850585.jpeg',
+                'https://images.pexels.com/photos/16219483/pexels-photo-16219483.jpeg',
+                'https://images.pexels.com/photos/9470881/pexels-photo-9470881.jpeg'
             ]
         },
         bolinha: {
@@ -196,9 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "A vida para mim é uma longa soneca interrompida por petiscos. Sou um especialista em encontrar o lugar mais confortável da casa e ronco como um trator. Se você procura um companheiro para maratonas de séries, sou o cão ideal. Minha maior aventura é ir da cama para a tigela de comida.",
             detalhes: ["Vacinado", "Vermifugado", "Castrado", "Sociável com todos"],
             imagens: [
-                'https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1575425186775-b8de9a427e67?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1594167383428-97103855a152?q=80&w=1974&auto=format&fit=crop'
+                'https://images.pexels.com/photos/1289557/pexels-photo-1289557.jpeg',
+                'https://images.pexels.com/photos/33870418/pexels-photo-33870418.jpeg',
+                'https://images.pexels.com/photos/1591939/pexels-photo-1591939.jpeg'
             ]
         },
         nina: {
@@ -207,9 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "Sou uma gata de linhagem nobre, ou pelo menos gosto de pensar que sim. Exijo ser escovada diariamente e aprecio os prazeres mais finos da vida, como salmão e almofadas de veludo. Não me entrego para qualquer um, mas se conquistar minha confiança, terá uma rainha a governar seu lar com elegância e afeto.",
             detalhes: ["Vacinada", "Vermifugada", "Castrada"],
             imagens: [
-                'https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=2070&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1516283086498-75c13b52b2b3?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?q=80&w=1974&auto=format&fit=crop'
+                'https://images.pexels.com/photos/8931752/pexels-photo-8931752.jpeg',
+                'https://images.pexels.com/photos/8931757/pexels-photo-8931757.jpeg',
+                'https://images.pexels.com/photos/8931758/pexels-photo-8931758.jpeg'
             ]
         },
          biscoito: {
@@ -218,9 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "Fui encontrado na rua, um pouco assustado, mas cheio de vontade de dar e receber amor. Sou um filhote muito inteligente e aprendo truques muito rápido. Adoro carinho e sou o campeão mundial de abanar o rabo. Só preciso de uma chance para mostrar o companheiro incrível que posso ser.",
             detalhes: ["Vacinado", "Vermifugado", "Sociável com outros cães"],
             imagens: [
-                'https://images.unsplash.com/photo-1588269842424-917132db95c6?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1559214352-a43b1a836934?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1588269842424-917132db95c6?q=80&w=1974&auto=format&fit=crop'
+                'https://images.pexels.com/photos/59965/dog-young-dog-puppy-59965.jpeg',
+                'https://images.pexels.com/photos/59988/dog-puppy-animal-portrait-small-dog-59988.jpeg',
+                'https://images.pexels.com/photos/30398763/pexels-photo-30398763.jpeg'
             ]
         },
         frajola: {
@@ -229,9 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
             historia: "Tenho uma pelagem elegante preta e branca e um ar de mistério. Gosto do meu espaço, mas não dispenso uma boa sessão de carinho no sofá no final do dia. Sou uma ótima ouvinte e a companhia perfeita para quem aprecia a independência e o charme felino. Gosto de caçar brinquedos e observar pássaros da janela.",
             detalhes: ["Vacinada", "Vermifugada", "Castrada", "Tímida com estranhos"],
             imagens: [
-                'https://images.unsplash.com/photo-1570458467431-b53833f47940?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1516332114985-7871b6582452?q=80&w=1974&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1595433723348-844c3569942a?q=80&w=1974&auto=format&fit=crop'
+                'https://images.pexels.com/photos/7275538/pexels-photo-7275538.jpeg',
+                'https://images.pexels.com/photos/7347413/pexels-photo-7347413.jpeg',
+                'https://images.pexels.com/photos/18156670/pexels-photo-18156670.jpeg'
             ]
         }
     };
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // CORREÇÃO: Listener específico para os links de privacidade
+    // Listener específico para os links de privacidade
     linksPrivacidade.forEach(link => {
         link.addEventListener('click', (evento) => {
             evento.preventDefault();
@@ -530,27 +530,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const miniaturasContainer = document.getElementById('detalhe-miniaturas');
         miniaturasContainer.innerHTML = '';
+
         animal.imagens.forEach((imgSrc, index) => {
-            const activeClass = index === 0 ? 'miniatura-ativa' : '';
-            miniaturasContainer.innerHTML += `<img src="${imgSrc}" alt="Miniatura de ${animal.nome} ${index + 1}" class="${activeClass}" loading="lazy" onclick="mudarImagem(this)">`;
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `Miniatura de ${animal.nome} ${index + 1}`;
+            img.loading = 'lazy';
+            if (index === 0) {
+                img.classList.add('miniatura-ativa');
+            }
+
+            img.addEventListener('click', (e) => {
+                const imagemPrincipal = document.getElementById('detalhe-imagem-principal');
+                imagemPrincipal.src = e.target.src;
+
+                miniaturasContainer.querySelectorAll('img').forEach(thumb => thumb.classList.remove('miniatura-ativa'));
+                e.target.classList.add('miniatura-ativa');
+            });
+
+            miniaturasContainer.appendChild(img);
         });
     };
 });
-
-// --- SCRIPT DA GALERIA DE IMAGENS ---
-function mudarImagem(miniaturaClicada) {
-    const novaImagemSrc = miniaturaClicada.src;
-    const imagemPrincipal = document.getElementById('detalhe-imagem-principal');
-    if (imagemPrincipal) {
-        imagemPrincipal.src = novaImagemSrc;
-    }
-    
-    const miniaturasContainer = document.getElementById('detalhe-miniaturas');
-    if (miniaturasContainer) {
-        miniaturasContainer.querySelectorAll('img').forEach(miniatura => {
-            miniatura.classList.remove('miniatura-ativa');
-        });
-        miniaturaClicada.classList.add('miniatura-ativa');
-    }
-}
 

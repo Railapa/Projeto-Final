@@ -448,6 +448,9 @@ body.logged-out .info-usuario, body.logged-out .botao-logout { display: none; }
 .botao-adotar-detalhe {
     display: block;
     width: 100%;
+    max-width: 300px; /* Largura máxima em ecrãs pequenos */
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     background-color: var(--cor-principal);
     color: white;
@@ -971,6 +974,12 @@ textarea.campo-form {
     .finais-felizes-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .botao-adotar-detalhe {
+        width: auto;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 @media (min-width: 1024px) {
     .carrossel {
@@ -983,5 +992,4 @@ textarea.campo-form {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 
