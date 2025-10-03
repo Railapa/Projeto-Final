@@ -203,6 +203,7 @@ body.logged-out .info-usuario, body.logged-out .botao-logout { display: none; }
 }
 .botao-principal:hover {
     background-color: var(--cor-principal-hover);
+    color: white;
 }
 
 /* Seção Sobre */
