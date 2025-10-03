@@ -75,7 +75,8 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
 }
 .menu-link {
     color: var(--cor-texto-claro);
@@ -86,8 +87,7 @@ body {
 .menu-link:hover {
     color: var(--cor-principal);
 }
-.botao-login {
-    display: none;
+.botao-login, .botao-logout {
     background-color: var(--cor-principal);
     color: white;
     padding: 0.5rem 1.25rem;
@@ -95,10 +95,35 @@ body {
     font-weight: 600;
     transition: background-color 0.3s ease;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 }
-.botao-login:hover {
+.botao-login:hover, .botao-logout:hover {
     background-color: var(--cor-principal-hover);
 }
+.info-usuario {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+}
+.email-usuario {
+    font-weight: 500;
+    color: var(--cor-texto-claro);
+    display: none; /* Hide on mobile */
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+body.logged-in .botao-login { display: none; }
+body.logged-in .info-usuario, body.logged-in .botao-logout { display: flex; }
+body.logged-out .botao-login { display: flex; }
+body.logged-out .info-usuario, body.logged-out .botao-logout { display: none; }
+
+
 .botao-menu-mobile {
     display: block;
     background: none;
@@ -321,11 +346,20 @@ body {
     pointer-events: none;
 }
 
-/* Página Detalhe do Animal e Página Sobre */
-#conteudo-detalhe, #conteudo-saber-mais {
+/* Páginas Escondidas */
+#conteudo-detalhe, #conteudo-saber-mais, #conteudo-ajudar, #conteudo-finais-felizes, #conteudo-guia, #conteudo-auth, #conteudo-privacidade {
     display: none;
     padding: 2rem 0;
 }
+.botao-voltar-pagina {
+    text-decoration: none; 
+    color: var(--cor-principal); 
+    font-weight: 600; 
+    margin-bottom: 2rem; 
+    display: inline-block;
+}
+
+/* Página Detalhe do Animal */
 .detalhe-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -451,7 +485,7 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 .membro-nome {
@@ -462,7 +496,6 @@ body {
     color: var(--cor-texto-claro);
     font-size: 0.875rem;
 }
-
 
 /* Seção Contato */
 .secao-contato {
@@ -521,8 +554,280 @@ textarea.campo-form {
     background-color: var(--cor-principal-hover);
     transform: translateY(-2px);
 }
+.botao-enviar:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
 
-/* --- ESTILOS DA MENSAGEM DE FEEDBACK --- */
+/* --- NOVOS ESTILOS - PÁGINA 'COMO AJUDAR' --- */
+.secao-ajudar {
+    padding: 4rem 0;
+}
+.ajudar-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+.ajudar-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+}
+.ajudar-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 1rem;
+}
+.metodos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.metodo-doacao {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f3f4f6;
+}
+.metodo-doacao h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+    margin: 0 0 1rem 0;
+}
+.metodo-doacao p {
+    margin: 0.25rem 0;
+    line-height: 1.5;
+}
+.container-pix {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+#chave-pix {
+    font-family: monospace;
+    color: var(--cor-texto-claro);
+    word-break: break-all;
+}
+.btn-copiar {
+    background: none;
+    border: 1px solid var(--cor-principal);
+    color: var(--cor-principal);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+.btn-copiar:hover {
+    background-color: var(--cor-principal);
+    color: white;
+}
+.lista-bens {
+    list-style-type: '🐾';
+    padding-left: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* --- NOVOS ESTILOS - PÁGINA 'FINAIS FELIZES' --- */
+.finais-felizes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.card-feliz {
+    background-color: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.card-feliz img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.card-feliz-conteudo {
+    padding: 1.5rem;
+}
+.card-feliz-conteudo h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+}
+.card-feliz-conteudo p {
+    font-style: italic;
+    color: var(--cor-texto-claro);
+    margin-top: 0.5rem;
+}
+
+/* --- NOVOS ESTILOS - PÁGINA 'GUIA DE ADOÇÃO' --- */
+.guia-adocao-lista {
+    list-style: none;
+    padding: 0;
+    counter-reset: step-counter;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+.guia-adocao-lista li {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 2rem;
+}
+.guia-adocao-lista li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--cor-principal);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.guia-adocao-lista strong {
+    display: block;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--cor-texto-escuro);
+}
+.faq-container details {
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+}
+.faq-container summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--cor-texto-escuro);
+}
+
+/* --- NOVOS ESTILOS - PÁGINA DE AUTENTICAÇÃO --- */
+.auth-container {
+    max-width: 450px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+#formulario-cadastro {
+    display: none;
+}
+.auth-toggle-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.auth-toggle-link a {
+    color: var(--cor-principal);
+    font-weight: 600;
+    cursor: pointer;
+}
+.campo-senha-wrapper {
+    position: relative;
+}
+.campo-senha-wrapper .campo-form {
+    padding-right: 3.5rem; 
+}
+.btn-mostrar-senha {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(0%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.btn-mostrar-senha:hover {
+    color: var(--cor-texto-escuro);
+}
+
+/* --- NOVOS ESTILOS - LGPD --- */
+.campo-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    justify-content: flex-start;
+}
+.campo-checkbox input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: var(--cor-principal);
+}
+.campo-checkbox label {
+    margin: 0;
+    color: var(--cor-texto-claro);
+    line-height: 1.5;
+}
+.campo-checkbox .link-privacidade {
+    text-decoration: underline;
+    color: var(--cor-principal);
+    font-weight: 600;
+}
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-texto-escuro);
+    color: #e5e7eb;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 100;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+#cookie-banner.visible {
+    transform: translateY(0);
+}
+#cookie-banner .link-privacidade {
+    color: var(--cor-principal);
+    text-decoration: underline;
+}
+#aceitar-cookies {
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* MENSAGEM DE FEEDBACK DO FORMULÁRIO */
 .feedback-mensagem {
     display: none;
     margin-top: 1rem;
@@ -530,7 +835,7 @@ textarea.campo-form {
     border-radius: 0.5rem;
     text-align: center;
     font-weight: 500;
-    grid-column: span 2 / span 2; /* Para ocupar a largura toda no desktop */
+    grid-column: span 2 / span 2;
 }
 .feedback-mensagem.sucesso {
     background-color: #d1fae5;
@@ -612,9 +917,12 @@ textarea.campo-form {
 
 /* Media Queries */
 @media (min-width: 768px) {
-    .menu-principal, .botao-login {
+    .menu-principal {
         display: flex;
         align-items: center;
+    }
+    .email-usuario {
+        display: block;
     }
     .botao-menu-mobile {
         display: none;
@@ -649,7 +957,19 @@ textarea.campo-form {
         grid-column: span 2 / span 2;
     }
     .rodape-grid {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+    .ajudar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .metodos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lista-bens {
+         grid-template-columns: repeat(2, 1fr);
+    }
+    .finais-felizes-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (min-width: 1024px) {
@@ -659,4 +979,9 @@ textarea.campo-form {
     .animal-card {
         flex: 0 0 33.333%;
     }
+    .finais-felizes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
+
+
