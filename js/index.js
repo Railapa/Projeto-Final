@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thor: {
             nome: "Thor",
             tags: ["Macho", "3 anos", "Porte Grande", "Brincalhão"],
-            historia: "Sou um grandalhão com um coração de ouro. Adoro pessoas, festas e brincadeiras. Sou um pouco desajeitado por causa do meu tamanho, mas sou todo amor. Me dou bem com todo mundo e só quero uma família que tenha espaço e energia para acompanhar meu ritmo. Prometo ser seu melhor amigo e protetor.",
+            historia: "Sou um grandalhão com um coração de ouro. Adoro pessoas, festas e brincadeiras. Sou um pouco desajeitado por causa do meu tamanho, mas sou bastante amoroso. Me dou bem com todo mundo e só quero uma família que tenha espaço e energia para acompanhar meu ritmo. Prometo ser seu melhor amigo e protetor.",
             detalhes: ["Vacinado", "Vermifugado", "Castrado", "Sociável com crianças"],
             imagens: [
                 'https://images.pexels.com/photos/8850585/pexels-photo-8850585.jpeg',
