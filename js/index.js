@@ -131,6 +131,7 @@ onAuthStateChanged(auth, (user) => {
         body.classList.remove('logged-out');
         body.classList.add('logged-in');
         infoUsuario.textContent = user.email;
+        window.dispatchEvent(new CustomEvent('authChange', { detail: { loggedIn: true } }));
 
         if (document.getElementById('conteudo-auth').style.display === 'block') {
             window.dispatchEvent(new CustomEvent('mostrarPrincipal'));
@@ -139,6 +140,7 @@ onAuthStateChanged(auth, (user) => {
         body.classList.remove('logged-in');
         body.classList.add('logged-out');
         infoUsuario.textContent = '';
+        window.dispatchEvent(new CustomEvent('authChange', { detail: { loggedIn: false } }));
     }
 });
 
@@ -253,6 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const botoesAdotar = document.querySelectorAll('.botao-adotar[data-animal]');
     const linksNavegacao = document.querySelectorAll('.menu-link, .botao-principal, .botao-secundario, .botao-voltar-pagina, .botao-login');
     const linksPrivacidade = document.querySelectorAll('.link-privacidade');
+    let usuarioEstaLogado = false;
+
+    window.addEventListener('authChange', (e) => {
+        usuarioEstaLogado = e.detail.loggedIn;
+    });
     
     // --- FUNÇÕES DE NAVEGAÇÃO ---
     const mostrarPagina = (paginaId) => {
@@ -369,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Listener específico para os links de privacidade
     linksPrivacidade.forEach(link => {
         link.addEventListener('click', (evento) => {
             evento.preventDefault();
@@ -506,14 +512,25 @@ document.addEventListener('DOMContentLoaded', () => {
         botaoAdotarDetalhe.textContent = `Quero Adotar o ${animal.nome}!`;
         
         const novoBotao = botaoAdotarDetalhe.cloneNode(true);
+        novoBotao.dataset.animalNome = animal.nome; // Adiciona o nome do animal para uso posterior
         botaoAdotarDetalhe.parentNode.replaceChild(novoBotao, botaoAdotarDetalhe);
         
         novoBotao.addEventListener('click', (e) => {
             e.preventDefault();
-             mostrarPrincipal(() => {
-                document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('contato-assunto').value = `Interesse em adotar: ${animal.nome}`;
-             });
+            if (usuarioEstaLogado) {
+                 mostrarPrincipal(() => {
+                    const contatoSecao = document.getElementById('contato');
+                    if (contatoSecao) {
+                        contatoSecao.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    const assuntoInput = document.getElementById('contato-assunto');
+                    if (assuntoInput) {
+                        assuntoInput.value = `Interesse em adotar: ${e.target.dataset.animalNome}`;
+                    }
+                 });
+            } else {
+                mostrarPagina('auth');
+            }
         });
         
         const tagsContainer = document.getElementById('detalhe-tags');
@@ -542,8 +559,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             img.addEventListener('click', (e) => {
                 const imagemPrincipal = document.getElementById('detalhe-imagem-principal');
-                imagemPrincipal.src = e.target.src;
-
+                if (imagemPrincipal) {
+                    imagemPrincipal.src = e.target.src;
+                }
                 miniaturasContainer.querySelectorAll('img').forEach(thumb => thumb.classList.remove('miniatura-ativa'));
                 e.target.classList.add('miniatura-ativa');
             });
@@ -552,4 +570,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 });
-

@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adote um Amigo - Adoção de Animais</title>
-    <!-- Usando a fonte Inter, que é moderna e legível -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Link para o seu ficheiro de CSS externo -->
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body class="logged-out">
 
-    <!-- Cabeçalho e Menu de Navegação -->
     <header class="cabecalho">
         <div class="container">
             <nav class="navegacao">
@@ -38,9 +35,7 @@
         </div>
     </header>
 
-    <!-- Conteúdo Principal visível por defeito -->
     <main id="conteudo-principal">
-        <!-- Seção Hero (Boas-Vindas) -->
         <section id="home" class="secao-hero">
             <div class="secao-hero-overlay"></div>
             <div class="secao-hero-conteudo">
@@ -50,7 +45,6 @@
             </div>
         </section>
 
-        <!-- Seção Sobre Nós -->
         <section id="sobre" class="secao-sobre">
             <div class="container">
                 <div class="sobre-grid">
@@ -64,100 +58,98 @@
             </div>
         </section>
 
-       <!-- Seção Animais para Adoção (Carrossel) -->
-       <section id="adotar" class="secao-adocao">
-        <div class="container">
-            <h2 class="titulo-secao">Nossos <span>Amigos</span></h2>
-            <p class="subtitulo-secao">Navegue com as setas para conhecer alguns dos animais que esperam por um lar.</p>
-            
-            <div class="carrossel">
-                <button class="carrossel-botao carrossel-botao--esquerda is-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
+        <section id="adotar" class="secao-adocao">
+            <div class="container">
+                <h2 class="titulo-secao">Nossos <span>Amigos</span></h2>
+                <p class="subtitulo-secao">Navegue com as setas para conhecer alguns dos animais que esperam por um lar.</p>
                 
-                <div class="carrossel-viewport">
-                    <ul class="carrossel-trilha">
-                        <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/16622616/pexels-photo-16622616.jpeg" alt="Foto do Rex, um cão a sorrir" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Rex</h3>
-                                    <p class="animal-detalhes">Macho • 2 anos • Vira-lata</p>
-                                    <a href="#" class="botao-adotar" data-animal="rex">Quero Adotar</a>
+                <div class="carrossel">
+                    <button class="carrossel-botao carrossel-botao--esquerda is-hidden" aria-label="Animal anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    
+                    <div class="carrossel-viewport">
+                        <ul class="carrossel-trilha">
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/16622616/pexels-photo-16622616.jpeg" alt="Foto do Rex, um cão sorrindo" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Rex</h3>
+                                        <p class="animal-detalhes">Macho • 2 anos • Vira-lata</p>
+                                        <a href="#" class="botao-adotar" data-animal="rex">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/18160469/pexels-photo-18160469.jpeg" alt="Foto da Mimi, uma gata com óculos escuros" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Mimi</h3>
-                                    <p class="animal-detalhes">Fêmea • 1 ano • Siamês</p>
-                                    <a href="#" class="botao-adotar" data-animal="mimi">Quero Adotar</a>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/18160469/pexels-photo-18160469.jpeg" alt="Foto da Mimi, uma gata" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Mimi</h3>
+                                        <p class="animal-detalhes">Fêmea • 1 ano • Siamês</p>
+                                        <a href="#" class="botao-adotar" data-animal="mimi">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/8850585/pexels-photo-8850585.jpeg" alt="Foto do Thor, um cão Labrador" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Thor</h3>
-                                    <p class="animal-detalhes">Macho • 3 anos • Labrador</p>
-                                    <a href="#" class="botao-adotar" data-animal="thor">Quero Adotar</a>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/8850585/pexels-photo-8850585.jpeg" alt="Foto do Thor, um cão Labrador" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Thor</h3>
+                                        <p class="animal-detalhes">Macho • 3 anos • Labrador</p>
+                                        <a href="#" class="botao-adotar" data-animal="thor">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/1289557/pexels-photo-1289557.jpeg" alt="Foto do Bolinha, um cão da raça Pug" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Bolinha</h3>
-                                    <p class="animal-detalhes">Macho • 5 anos • Pug</p>
-                                    <a href="#" class="botao-adotar" data-animal="bolinha">Quero Adotar</a>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/1289557/pexels-photo-1289557.jpeg" alt="Foto do Bolinha, um cão da raça Pug" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Bolinha</h3>
+                                        <p class="animal-detalhes">Macho • 5 anos • Pug</p>
+                                        <a href="#" class="botao-adotar" data-animal="bolinha">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/8931752/pexels-photo-8931752.jpeg" alt="Foto da Nina, uma gata Persa" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Nina</h3>
-                                    <p class="animal-detalhes">Fêmea • 2 anos • Persa</p>
-                                    <a href="#" class="botao-adotar" data-animal="nina">Quero Adotar</a>
+                            </li>
+                            <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/8931752/pexels-photo-8931752.jpeg" alt="Foto da Nina, uma gata Persa" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Nina</h3>
+                                        <p class="animal-detalhes">Fêmea • 2 anos • Persa</p>
+                                        <a href="#" class="botao-adotar" data-animal="nina">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/59965/dog-young-dog-puppy-59965.jpeg" alt="Foto do Biscoito, um cão simpático" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Biscoito</h3>
-                                    <p class="animal-detalhes">Macho • 8 meses • Rafeiro</p>
-                                    <a href="#" class="botao-adotar" data-animal="biscoito">Quero Adotar</a>
+                            </li>
+                             <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/59965/dog-young-dog-puppy-59965.jpeg" alt="Foto do Biscoito, um cão simpático" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Biscoito</h3>
+                                        <p class="animal-detalhes">Macho • 8 meses • Vira-lata</p>
+                                        <a href="#" class="botao-adotar" data-animal="biscoito">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                         <li class="animal-card">
-                            <div class="animal-card-conteudo">
-                                <img src="https://images.pexels.com/photos/7275538/pexels-photo-7275538.jpeg" alt="Foto da Frajola, uma gata preta e branca" class="animal-imagem">
-                                <div class="animal-info">
-                                    <h3 class="animal-nome">Frajola</h3>
-                                    <p class="animal-detalhes">Fêmea • 3 anos • Comum Europeu</p>
-                                    <a href="#" class="botao-adotar" data-animal="frajola">Quero Adotar</a>
+                            </li>
+                             <li class="animal-card">
+                                <div class="animal-card-conteudo">
+                                    <img src="https://images.pexels.com/photos/7275538/pexels-photo-7275538.jpeg" alt="Foto da Frajola, uma gata preta e branca" class="animal-imagem" loading="lazy">
+                                    <div class="animal-info">
+                                        <h3 class="animal-nome">Frajola</h3>
+                                        <p class="animal-detalhes">Fêmea • 3 anos • Comum Europeu</p>
+                                        <a href="#" class="botao-adotar" data-animal="frajola">Quero Conhecer</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="carrossel-botao carrossel-botao--direita" aria-label="Próximo animal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
                 </div>
-                
-                <button class="carrossel-botao carrossel-botao--direita">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
             </div>
-        </div>
-    </section>
+        </section>
 
-        <!-- Seção Contato -->
         <section id="contato" class="secao-contato">
            <div class="container">
                 <h2 class="titulo-secao">Fale <span>Conosco</span></h2>
@@ -178,7 +170,6 @@
         </section>
     </main>
 
-    <!-- PÁGINA 'COMO AJUDAR' (Começa escondida) -->
     <div id="conteudo-ajudar">
         <div class="container">
             <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a página principal</a>
@@ -242,7 +233,6 @@
         </div>
     </div>
 
-    <!-- PÁGINA 'FINAIS FELIZES' (Começa escondida) -->
     <div id="conteudo-finais-felizes">
         <div class="container">
             <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a página principal</a>
@@ -275,7 +265,6 @@
         </div>
     </div>
 
-    <!-- PÁGINA 'GUIA DE ADOÇÃO' (Começa escondida) -->
     <div id="conteudo-guia">
          <div class="container">
             <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a página principal</a>
@@ -307,7 +296,6 @@
         </div>
     </div>
 
-    <!-- PÁGINA 'SABER MAIS' (Começa escondida) -->
     <div id="conteudo-saber-mais">
         <div class="container">
             <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a página principal</a>
@@ -343,21 +331,17 @@
         </div>
     </div>
     
-    <!-- PÁGINA DE DETALHES DO ANIMAL (Começa escondida) -->
     <div id="conteudo-detalhe">
         <div class="container">
             <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a lista</a>
             <div class="detalhe-grid">
-                <!-- Coluna da Esquerda: Galeria de Imagens (será preenchida por JS) -->
                 <div class="galeria-animal">
                     <div class="imagem-principal-container">
                         <img src="" alt="Imagem principal do animal" id="detalhe-imagem-principal">
                     </div>
                     <div class="galeria-miniaturas" id="detalhe-miniaturas">
-                        <!-- Miniaturas serão inseridas aqui pelo JavaScript -->
-                    </div>
+                        </div>
                 </div>
-                <!-- Coluna da Direita: Informações do Animal (será preenchida por JS) -->
                 <div class="info-animal">
                     <h1 class="info-animal-nome" id="detalhe-nome"></h1>
                     <div class="info-animal-tags" id="detalhe-tags"></div>
@@ -371,12 +355,10 @@
         </div>
     </div>
 
-    <!-- PÁGINA DE AUTENTICAÇÃO (Começa escondida) -->
     <div id="conteudo-auth">
         <div class="container">
              <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a página principal</a>
              <div class="auth-container">
-                <!-- Formulário de Login -->
                 <form id="formulario-login" class="formulario-contato" style="display: grid;">
                     <h2 class="titulo-secao campo-largura-total" style="margin-bottom: 1rem;">Entrar na <span>Sua Conta</span></h2>
                     <div class="campo-grupo campo-largura-total"><label for="login-email" class="rotulo-form">Email</label><input type="email" id="login-email" class="campo-form" required></div>
@@ -384,8 +366,8 @@
                         <label for="login-senha" class="rotulo-form">Senha</label>
                         <input type="password" id="login-senha" class="campo-form" required>
                         <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha">
-                            <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                            <svg class="icon-eye-slash" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                            <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <svg class="icon-eye-slash" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
                         </button>
                     </div>
                     <div class="campo-grupo campo-largura-total"><button type="submit" class="botao-enviar">Entrar</button></div>
@@ -393,7 +375,6 @@
                     <p class="auth-toggle-link campo-largura-total">Não tem uma conta? <a id="link-para-cadastro">Cadastre-se</a></p>
                 </form>
 
-                <!-- Formulário de Cadastro -->
                 <form id="formulario-cadastro" class="formulario-contato">
                     <h2 class="titulo-secao campo-largura-total" style="margin-bottom: 1rem;">Crie a <span>Sua Conta</span></h2>
                     <div class="campo-grupo campo-largura-total"><label for="cadastro-email" class="rotulo-form">Email</label><input type="email" id="cadastro-email" class="campo-form" required></div>
@@ -401,7 +382,7 @@
                         <label for="cadastro-senha" class="rotulo-form">Senha (mínimo 6 caracteres)</label>
                         <input type="password" id="cadastro-senha" class="campo-form" required>
                         <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha">
-                            <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                             <svg class="icon-eye-slash" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
                         </button>
                     </div>
@@ -425,7 +406,6 @@
         </div>
     </div>
 
-    <!-- PÁGINA 'POLÍTICA DE PRIVACIDADE' (Começa escondida) -->
     <div id="conteudo-privacidade">
         <div class="container">
             <a href="#" class="botao-voltar-pagina" data-pagina="voltar">&larr; Voltar para a página principal</a>
@@ -449,7 +429,6 @@
     </div>
 
 
-    <!-- Rodapé -->
     <footer class="rodape">
         <div class="container">
             <div class="rodape-grid">
@@ -489,16 +468,12 @@
         </div>
     </footer>
 
-    <!-- BANNER DE COOKIES LGPD -->
     <div id="cookie-banner">
         <p>Este site utiliza cookies para garantir a melhor experiência de navegação. Ao continuar, você concorda com a nossa <a href="#" class="link-privacidade" data-pagina="privacidade">Política de Privacidade</a>.</p>
         <button id="aceitar-cookies">Aceitar</button>
     </div>
     
-    <!-- Scripts -->
     <script type="module" src="/js/index.js"></script>
 
 </body>
 </html>
-
-
