@@ -49,7 +49,7 @@ const getFirebaseErrorMessage = (error) => {
         case 'auth/wrong-password':
             return 'E-mail ou senha incorretos.';
         default:
-            return 'Ocorreu um erro. Tente novamente.';
+            return 'Senha ou E-mail incorretos.';
     }
 };
 
