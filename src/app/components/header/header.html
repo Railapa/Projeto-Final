@@ -1,0 +1,31 @@
+ <header class="cabecalho">
+        <div class="container">
+            <nav class="navegacao">
+               <nav class="navegacao">
+    <a routerLink="/" class="logo menu-link">Adote um Amigo <span>🐾</span></a>
+    <ul class="menu-principal" id="menu-navegacao">
+        <li><a class="menu-link" routerLink="/">Home</a></li>
+        <li><a class="menu-link" routerLink="/" fragment="adotar">Adotar</a></li>
+        <li><a class="menu-link" routerLink="/ajudar">Como Ajudar</a></li>
+        <li><a class="menu-link" routerLink="/finais-felizes">Finais Felizes</a></li>
+        <li><a class="menu-link" routerLink="/guia-adocao">Guia de Adoção</a></li>
+        <li><a class="menu-link" routerLink="/" fragment="contato">Contato</a></li>
+       <li>
+    <ng-container *ngIf="!currentUserSig()">
+        <button class="botao-login" routerLink="/login">Login</button>
+    </ng-container>
+
+    <ng-container *ngIf="currentUserSig()">
+        <div class="info-usuario">
+            <span class="email-usuario">{{ currentUserSig()?.email }}</span>
+            <button class="botao-logout" (click)="logout()">Sair</button>
+        </div>
+    </ng-container>
+</li>
+    </ul>
+    <button class="botao-menu-mobile" id="botao-menu-mobile" aria-label="Abrir menu de navegação"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="none" viewBox="0 0 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+</nav>
+            </nav>
+        </div>
+    </header>
+

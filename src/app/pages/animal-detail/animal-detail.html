@@ -1,0 +1,29 @@
+<div *ngIf="animal" class="container">
+    <a routerLink="/" class="botao-voltar-pagina">&larr; Voltar para a lista</a>
+    <div class="detalhe-grid">
+        <div class="galeria-animal">
+            <div class="imagem-principal-container">
+                <img [src]="animal.imagens[0]" [alt]="'Imagem principal do ' + animal.nome" id="detalhe-imagem-principal">
+            </div>
+            <div class="galeria-miniaturas" id="detalhe-miniaturas">
+                <img *ngFor="let img of animal.imagens" [src]="img" [alt]="'Miniatura de ' + animal.nome">
+            </div>
+        </div>
+        <div class="info-animal">
+            <h1 class="info-animal-nome">{{ animal.nome }}</h1>
+            <div class="info-animal-tags">
+                <span class="tag-animal" *ngFor="let tag of animal.tags">{{ tag }}</span>
+            </div>
+            <h2 class="info-animal-subtitulo">Minha história</h2>
+            <p class="info-animal-texto">{{ animal.historia }}</p>
+            <h2 class="info-animal-subtitulo">Detalhes</h2>
+            <ul class="info-animal-lista">
+                <li *ngFor="let detalhe of animal.detalhes">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    {{ detalhe }}
+                </li>
+            </ul>
+            <button (click)="queroAdotar()" class="botao-adotar-detalhe">Quero Adotar o {{ animal.nome }}!</button>
+        </div>
+    </div>
+</div>
