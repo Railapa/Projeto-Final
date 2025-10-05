@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// Corrija os nomes das classes e dos arquivos aqui
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { CookieBanner } from './components/cookie-banner/cookie-banner'; // 1. Importe aqui
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    // E use os nomes corretos aqui também
     Header,
-    Footer
+    Footer,
+    CookieBanner // 2. Adicione na lista
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

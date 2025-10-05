@@ -3,10 +3,14 @@
     <div class="detalhe-grid">
         <div class="galeria-animal">
             <div class="imagem-principal-container">
-                <img [src]="animal.imagens[0]" [alt]="'Imagem principal do ' + animal.nome" id="detalhe-imagem-principal">
+                <img [src]="imagemPrincipal" [alt]="'Imagem principal do ' + animal.nome">
             </div>
-            <div class="galeria-miniaturas" id="detalhe-miniaturas">
-                <img *ngFor="let img of animal.imagens" [src]="img" [alt]="'Miniatura de ' + animal.nome">
+            <div class="galeria-miniaturas">
+                <img *ngFor="let img of animal.imagens" 
+                     [src]="img" 
+                     [alt]="'Miniatura de ' + animal.nome"
+                     (click)="trocarImagemPrincipal(img)"
+                     [class.miniatura-ativa]="img === imagemPrincipal">
             </div>
         </div>
         <div class="info-animal">

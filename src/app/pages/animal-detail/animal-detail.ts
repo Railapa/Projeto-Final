@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-// A CORREÇÃO ESTÁ AQUI:
 import { Animal, AnimalService } from '../../services/animal';
 
 @Component({
@@ -13,6 +12,9 @@ import { Animal, AnimalService } from '../../services/animal';
 })
 export class AnimalDetail implements OnInit {
   animal: Animal | undefined;
+  
+  // Variável para guardar a URL da imagem principal
+  imagemPrincipal = '';
 
   private route = inject(ActivatedRoute);
   private router = inject(Router);
@@ -25,7 +27,16 @@ export class AnimalDetail implements OnInit {
     const animalId = this.route.snapshot.paramMap.get('id');
     if (animalId) {
       this.animal = this.animalService.getAnimalById(animalId);
+      
+      if (this.animal && this.animal.imagens.length > 0) {
+        this.imagemPrincipal = this.animal.imagens[0];
+      }
     }
+  }
+
+  // Função para trocar a imagem principal
+  trocarImagemPrincipal(novaImagem: string): void {
+    this.imagemPrincipal = novaImagem;
   }
 
   queroAdotar(): void {

@@ -1,5 +1,6 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// 1. Importe 'withInMemoryScrolling' e remova 'withAnchorScrolling'
+import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 
@@ -9,9 +10,17 @@ import { AuthService } from './services/auth.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    // 2. A estrutura correta e final é esta:
+    provideRouter(routes, 
+      withRouterConfig({ onSameUrlNavigation: 'reload' }),
+      withInMemoryScrolling({ 
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled' 
+      })
+    ),
+    
     AuthService,
-    // Chame as funções do Firebase diretamente aqui, sem o 'importProvidersFrom':
+    
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
   ]

@@ -858,7 +858,7 @@ textarea.campo-form {
     background-color: var(--cor-texto-escuro);
     color: #d1d5db;
     padding-top: 2rem;
-    margin-top: 4rem;
+    margin-top: 6rem;
 }
 .rodape-grid {
     display: grid;
