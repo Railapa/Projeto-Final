@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { AnimalService } from '../../services/animal'; // <-- 1. CORREÇÃO AQUI
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { AnimalService } from '../../services/animal';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,7 @@ export class Home implements OnInit, AfterViewInit {
   mostrarBotaoAnterior = false;
   mostrarBotaoProximo = true;
   @ViewChild('trilha') trilha!: ElementRef<HTMLUListElement>;
-  @ViewChild('card') card!: ElementRef<HTMLLIElement>; // <-- 2. CORREÇÃO AQUI (era ViewCHild)
+  @ViewChild('card') card!: ElementRef<HTMLLIElement>;
   
   // --- Código para o formulário de contato ---
   contatoForm: FormGroup;
@@ -28,7 +28,8 @@ export class Home implements OnInit, AfterViewInit {
   constructor(
     private animalService: AnimalService,
     private cdr: ChangeDetectorRef,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private route: ActivatedRoute
   ) {
     this.contatoForm = this.fb.group({
       nome: ['', Validators.required],
@@ -39,14 +40,27 @@ export class Home implements OnInit, AfterViewInit {
     });
   }
 
-  // --- Métodos do carrossel ---
+  // --- Métodos ---
   ngOnInit(): void {
     this.animais = this.animalService.getAnimals();
+
+    this.route.queryParams.subscribe(params => {
+      // PONTO DE VERIFICAÇÃO 2:
+      console.log('Página Home recebeu os seguintes parâmetros:', params);
+      
+      if (params['assunto']) {
+        // PONTO DE VERIFICAÇÃO 3:
+        console.log('Preenchendo o formulário com:', params['assunto']);
+        this.contatoForm.patchValue({ assunto: params['assunto'] });
+      }
+    });
   }
 
   ngAfterViewInit(): void {
-    this.atualizarBotoes();
-    this.cdr.detectChanges();
+    if (this.card) { // Adiciona verificação para segurança
+        this.atualizarBotoes();
+        this.cdr.detectChanges();
+    }
   }
   
   @HostListener('window:resize')
@@ -72,7 +86,7 @@ export class Home implements OnInit, AfterViewInit {
   }
   
   private atualizarBotoes(): void {
-    if (!this.trilha) {
+    if (!this.trilha || !this.card) {
       this.mostrarBotaoAnterior = false;
       this.mostrarBotaoProximo = false;
       return;
@@ -89,7 +103,6 @@ export class Home implements OnInit, AfterViewInit {
     return slideLargura > 0 ? Math.round(trilhaLargura / slideLargura) : 1;
   }
 
-  // --- Método para enviar o formulário de contato ---
   async handleContatoSubmit(): Promise<void> {
     if (this.contatoForm.invalid) {
       return;

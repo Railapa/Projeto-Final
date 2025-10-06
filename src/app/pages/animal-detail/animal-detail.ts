@@ -12,8 +12,6 @@ import { Animal, AnimalService } from '../../services/animal';
 })
 export class AnimalDetail implements OnInit {
   animal: Animal | undefined;
-  
-  // Variável para guardar a URL da imagem principal
   imagemPrincipal = '';
 
   private route = inject(ActivatedRoute);
@@ -27,14 +25,12 @@ export class AnimalDetail implements OnInit {
     const animalId = this.route.snapshot.paramMap.get('id');
     if (animalId) {
       this.animal = this.animalService.getAnimalById(animalId);
-      
       if (this.animal && this.animal.imagens.length > 0) {
         this.imagemPrincipal = this.animal.imagens[0];
       }
     }
   }
 
-  // Função para trocar a imagem principal
   trocarImagemPrincipal(novaImagem: string): void {
     this.imagemPrincipal = novaImagem;
   }
@@ -43,7 +39,14 @@ export class AnimalDetail implements OnInit {
     if (!this.currentUserSig()) {
       this.router.navigate(['/login']);
     } else {
-      this.router.navigate(['/'], { fragment: 'contato' });
+      const assunto = `Interesse em adotar: ${this.animal?.nome}`;
+      // PONTO DE VERIFICAÇÃO 1:
+      console.log('Navegando com o seguinte assunto:', assunto);
+      
+      this.router.navigate(['/'], { 
+        fragment: 'contato',
+        queryParams: { assunto: assunto } 
+      });
     }
   }
 }

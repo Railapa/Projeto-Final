@@ -96,7 +96,7 @@ export class Auth {
       case 'auth/wrong-password':
         return 'E-mail ou senha incorretos.';
       default:
-        return 'Ocorreu um erro. Tente novamente.';
+        return 'E-mail ou senha incorretos.';
     }
   }
 }

@@ -61,7 +61,7 @@ export class AnimalService {
       },
       nina: {
           nome: "Nina",
-          tags: ["Fêmea", "2 anos", "Pelo Longo", "Elegante"],
+          tags: ["Fêmea", "2 anos", "Porte Médio", "Elegante"],
           historia: "Sou uma gata de linhagem nobre, ou pelo menos gosto de pensar que sim. Exijo ser escovada diariamente e aprecio os prazeres mais finos da vida, como salmão e almofadas de veludo. Não me entrego para qualquer um, mas se conquistar minha confiança, terá uma rainha a governar seu lar com elegância e afeto.",
           detalhes: ["Vacinada", "Vermifugada", "Castrada"],
           imagens: [
@@ -72,7 +72,7 @@ export class AnimalService {
       },
        biscoito: {
           nome: "Biscoito",
-          tags: ["Macho", "8 meses", "Porte Médio", "Dócil"],
+          tags: ["Macho", "8 meses", "Porte Pequeno", "Dócil"],
           historia: "Fui encontrado na rua, um pouco assustado, mas cheio de vontade de dar e receber amor. Sou um filhote muito inteligente e aprendo truques muito rápido. Adoro carinho e sou o campeão mundial de abanar o rabo. Só preciso de uma chance para mostrar o companheiro incrível que posso ser.",
           detalhes: ["Vacinado", "Vermifugado", "Sociável com outros cães"],
           imagens: [
