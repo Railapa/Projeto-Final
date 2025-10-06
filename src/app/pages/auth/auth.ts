@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router, RouterLink } from '@angular/router'; // Adicione RouterLink aqui
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink], // E adicione aqui
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './auth.html'
 })
 export class Auth {
@@ -29,11 +29,12 @@ export class Auth {
       password: ['', [Validators.required]]
     });
 
-    // Cria o formulário de cadastro
+    // Cria o formulário de cadastro com o novo campo 'lgpd'
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]]
+      confirmPassword: ['', [Validators.required]],
+      lgpd: [false, Validators.requiredTrue] // CAMPO ADICIONADO AQUI
     });
   }
 
@@ -83,7 +84,7 @@ export class Auth {
     this.registerForm.reset();
   }
 
-  // Função para traduzir os erros do Firebase (igual à do seu JS original)
+  // Função para traduzir os erros do Firebase
   getFirebaseErrorMessage(errorCode: string): string {
     switch (errorCode) {
       case 'auth/email-already-in-use':
@@ -94,9 +95,10 @@ export class Auth {
         return 'A senha precisa ter no mínimo 6 caracteres.';
       case 'auth/user-not-found':
       case 'auth/wrong-password':
+      case 'auth/invalid-credential':
         return 'E-mail ou senha incorretos.';
       default:
-        return 'E-mail ou senha incorretos.';
+        return 'Ocorreu um erro. Tente novamente.';
     }
   }
 }
