@@ -37,7 +37,7 @@
 
         <div class="campo-grupo campo-largura-total campo-senha-wrapper">
             <label for="cadastro-senha" class="rotulo-form">Senha (mínimo 6 caracteres)</label>
-            <input placeholder="Crie a sua Senha" type="password" id="cadastro-senha" class="campo-form" formControlName="password" #registerSenha>
+            <input placeholder="Crie sua Senha" type="password" id="cadastro-senha" class="campo-form" formControlName="password" #registerSenha>
             <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha"
                     (click)="registerSenha.type = (registerSenha.type === 'password' ? 'text' : 'password')">
                 <svg class="icon-eye" [style.display]="registerSenha.type === 'password' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -47,7 +47,7 @@
 
         <div class="campo-grupo campo-largura-total campo-senha-wrapper">
             <label for="cadastro-senha-confirma" class="rotulo-form">Confirmar Senha</label>
-            <input placeholder="Confirme a sua Senha" type="password" id="cadastro-senha-confirma" class="campo-form" formControlName="confirmPassword" #confirmSenha>
+            <input placeholder="Confirme sua Senha" type="password" id="cadastro-senha-confirma" class="campo-form" formControlName="confirmPassword" #confirmSenha>
             <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha"
                     (click)="confirmSenha.type = (confirmSenha.type === 'password' ? 'text' : 'password')">
                 <svg class="icon-eye" [style.display]="confirmSenha.type === 'password' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
