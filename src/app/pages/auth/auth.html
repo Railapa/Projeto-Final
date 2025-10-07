@@ -1,0 +1,72 @@
+<div class="container">
+  <a routerLink="/" class="botao-voltar-pagina">&larr; Voltar para a página principal</a>
+  <div class="auth-container">
+    
+    <form *ngIf="!isRegistering" [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="formulario-contato" style="display: grid;">
+      <h2 class="titulo-secao campo-largura-total" style="margin-bottom: 1rem;">Entrar na <span>Sua Conta</span></h2>
+      <div class="campo-grupo campo-largura-total">
+        <label for="login-email" class="rotulo-form">Email</label>
+        <input placeholder="exemplo@email.com" type="email" id="login-email" class="campo-form" formControlName="email">
+      </div>
+
+      <div class="campo-grupo campo-largura-total campo-senha-wrapper">
+          <label for="login-senha" class="rotulo-form">Senha</label>
+          <input placeholder="Digite sua Senha" type="password" id="login-senha" class="campo-form" formControlName="password" #loginSenha>
+          <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha" 
+                  (click)="loginSenha.type = (loginSenha.type === 'password' ? 'text' : 'password')">
+              <svg class="icon-eye" [style.display]="loginSenha.type === 'password' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <svg class="icon-eye-slash" [style.display]="loginSenha.type === 'text' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+          </button>
+      </div>
+
+      <div class="campo-grupo campo-largura-total">
+        <button type="submit" class="botao-enviar" [disabled]="loginForm.invalid">Entrar</button>
+      </div>
+      <div *ngIf="errorMessage" class="feedback-mensagem erro feedback-visivel campo-largura-total">
+        {{ errorMessage }}
+      </div>
+      <p class="auth-toggle-link campo-largura-total">Não tem uma conta? <a (click)="toggleForm()">Cadastre-se</a></p>
+    </form>
+
+    <form *ngIf="isRegistering" [formGroup]="registerForm" (ngSubmit)="handleRegister()" class="formulario-contato" style="display: grid;">
+        <h2 class="titulo-secao campo-largura-total" style="margin-bottom: 1rem;">Crie a <span>Sua Conta</span></h2>
+        <div class="campo-grupo campo-largura-total">
+          <label for="cadastro-email" class="rotulo-form">Email</label>
+          <input placeholder="exemplo@email.com" type="email" id="cadastro-email" class="campo-form" formControlName="email">
+        </div>
+
+        <div class="campo-grupo campo-largura-total campo-senha-wrapper">
+            <label for="cadastro-senha" class="rotulo-form">Senha (mínimo 6 caracteres)</label>
+            <input placeholder="Crie sua Senha" type="password" id="cadastro-senha" class="campo-form" formControlName="password" #registerSenha>
+            <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha"
+                    (click)="registerSenha.type = (registerSenha.type === 'password' ? 'text' : 'password')">
+                <svg class="icon-eye" [style.display]="registerSenha.type === 'password' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <svg class="icon-eye-slash" [style.display]="registerSenha.type === 'text' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+            </button>
+        </div>
+
+        <div class="campo-grupo campo-largura-total campo-senha-wrapper">
+            <label for="cadastro-senha-confirma" class="rotulo-form">Confirmar Senha</label>
+            <input placeholder="Confirme sua Senha" type="password" id="cadastro-senha-confirma" class="campo-form" formControlName="confirmPassword" #confirmSenha>
+            <button type="button" class="btn-mostrar-senha" aria-label="Mostrar senha"
+                    (click)="confirmSenha.type = (confirmSenha.type === 'password' ? 'text' : 'password')">
+                <svg class="icon-eye" [style.display]="confirmSenha.type === 'password' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <svg class="icon-eye-slash" [style.display]="confirmSenha.type === 'text' ? 'block' : 'none'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+            </button>
+        </div>
+
+        <div class="campo-grupo campo-largura-total campo-checkbox">
+            <input type="checkbox" id="lgpd-cadastro" formControlName="lgpd">
+            <label for="lgpd-cadastro">Eu concordo com a <a routerLink="/privacidade" class="link-privacidade">Política de Privacidade</a>.</label>
+        </div>
+
+        <div class="campo-grupo campo-largura-total">
+          <button type="submit" class="botao-enviar" [disabled]="registerForm.invalid">Criar Conta</button>
+        </div>
+        <div *ngIf="errorMessage" class="feedback-mensagem erro feedback-visivel campo-largura-total">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="feedback-mensagem sucesso feedback-visivel campo-largura-total">
+            {{ successMessage }}
+        </div>
+        <p class="auth-toggle-link campo-largura-total">Já tem uma conta? <a (click)="toggleForm()">Faça login</a></p>

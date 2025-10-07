@@ -1,0 +1,78 @@
+<div class="container">
+    <a routerLink="/" class="botao-voltar-pagina">&larr; Voltar para a página principal</a>
+    <h1 class="titulo-secao">Como Você Pode <span>Ajudar</span></h1>
+    <p class="subtitulo-secao">Sua ajuda é fundamental para continuarmos nosso trabalho. Cada contribuição, por menor que pareça, faz uma enorme diferença na vida dos nossos animais.</p>
+    
+    <div class="ajudar-grid">
+        <div class="ajudar-card">
+            <h3>Doações Monetárias</h3>
+            <p class="texto-secao" style="margin-top:0;">Sua doação é usada para cobrir despesas essenciais como tratamentos veterinários, cirurgias, medicação e ração de qualidade.</p>
+            <div class="metodos-grid">
+                <div class="metodo-doacao" style="text-align: center;">
+                    <h4>PIX</h4>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=00.123.456/0001-78" alt="QR Code para doação PIX" style="margin: 0 auto 1rem auto; border-radius: 8px; display: block;" loading="lazy">
+                    <p>Ou use a chave abaixo:</p>
+                     <div class="container-pix" style="max-width: 250px; margin: 0 auto;">
+                        <span #chavePix id="chave-pix">00.123.456/0001-78</span>
+                        <button (click)="copiarPix(chavePix.innerText)" id="btn-copiar-pix" class="btn-copiar">{{ textoBotaoCopiar }}</button>
+                    </div>
+                </div>
+                <div class="metodo-doacao">
+                    <h4>Transferência Bancária</h4>
+                    <p><strong>Banco:</strong> Banco do Brasil (001)</p>
+                    <p><strong>Agência:</strong> 1234-5</p>
+                    <p><strong>Conta Corrente:</strong> 98765-4</p>
+                    <p><strong>Nome:</strong> Associação Adote um Amigo</p>
+                    <p><strong>CNPJ:</strong> 00.123.456/0001-78</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ajudar-card">
+            <h3>Doação de Bens</h3>
+            <p class="texto-secao" style="margin-top:0;">Também precisamos de vários bens para o dia a dia. Sua doação de itens é uma ajuda preciosa. Itens que mais precisamos:</p>
+            <ul class="lista-bens">
+                <li>Ração seca e úmida</li>
+                <li>Cobertores e toalhas</li>
+                <li>Brinquedos resistentes</li>
+                <li>Coleiras e guias</li>
+                <li>Produtos de limpeza</li>
+                <li>Areia para gatos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ajudar-card" style="margin-top: 2.5rem;">
+        <h3 class="titulo-secao" style="text-align: center;">Seja Voluntário</h3>
+        <p class="subtitulo-secao" style="margin-top:0; margin-bottom: 2rem;">Seu tempo é um dos presentes mais valiosos. Interessado? Preencha o formulário abaixo e entraremos em contato!</p>
+        <form class="formulario-contato" [formGroup]="voluntarioForm" (ngSubmit)="handleVoluntarioSubmit()">
+            <div class="campo-grupo">
+                <label for="voluntario-nome" class="rotulo-form">Nome</label>
+                <input type="text" id="voluntario-nome" name="nome" class="campo-form" placeholder="Seu nome completo" formControlName="nome">
+            </div>
+            <div class="campo-grupo">
+                <label for="voluntario-email" class="rotulo-form">Email</label>
+                <input type="email" id="voluntario-email" name="email" class="campo-form" placeholder="seu@email.com" formControlName="email">
+            </div>
+            <div class="campo-grupo campo-largura-total">
+                <label for="voluntario-mensagem" class="rotulo-form">Fale sobre você e sua disponibilidade</label>
+                <textarea id="voluntario-mensagem" name="mensagem" rows="4" class="campo-form" formControlName="mensagem"></textarea>
+            </div>
+            <div class="campo-grupo campo-largura-total campo-checkbox">
+                <input type="checkbox" id="lgpd-voluntario" formControlName="lgpd">
+                <label for="lgpd-voluntario">Eu concordo com a <a routerLink="/privacidade" class="link-privacidade">Política de Privacidade</a>.</label>
+            </div>
+            <div class="campo-grupo campo-largura-total">
+                <button type="submit" class="botao-enviar" [disabled]="voluntarioForm.invalid || enviandoVoluntario">
+                    {{ enviandoVoluntario ? 'Enviando...' : 'Enviar Candidatura' }}
+                </button>
+            </div>
+            <div *ngIf="feedbackVoluntario.mensagem"
+                 class="feedback-mensagem campo-largura-total feedback-visivel"
+                 [class.sucesso]="feedbackVoluntario.tipo === 'sucesso'"
+                 [class.erro]="feedbackVoluntario.tipo === 'erro'">
+                {{ feedbackVoluntario.mensagem }}
+            </div>
+        </form>
+    </div>
+</div>

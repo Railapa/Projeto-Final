@@ -1,0 +1,99 @@
+<section id="home" class="secao-hero">
+    <div class="secao-hero-overlay"></div>
+    <div class="secao-hero-conteudo">
+        <h1 class="titulo-principal">Encontre o seu <span>novo melhor amigo</span> hoje mesmo.</h1>
+        <p class="subtitulo">Ajudamos centenas de animais a encontrar um lar seguro e feliz. A sua nova alegria pode estar a um clique de distância.</p>
+        <a href="#adotar" class="botao-principal menu-link" data-secao="adotar">Ver Animais Disponíveis</a>
+    </div>
+</section>
+
+<section id="sobre" class="secao-sobre">
+    <div class="container">
+        <div class="sobre-grid">
+            <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?q=80&w=1974&auto=format&fit=crop" alt="Mulher feliz abraçando um gato branco" class="sobre-imagem" loading="lazy">
+            <div class="sobre-conteudo">
+                <h2 class="titulo-secao">Quem <span>Somos</span></h2>
+                <p class="texto-secao">"Adote um Amigo" nasceu do amor incondicional pelos animais. Somos uma organização sem fins lucrativos dedicada a resgatar, cuidar e encontrar lares permanentes para cães e gatos em situação de vulnerabilidade. Acreditamos que todo animal merece uma segunda chance.</p>
+                <a routerLink="/sobre-nos" class="botao-secundario">Saber Mais</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="adotar" class="secao-adocao">
+    <div class="container">
+        <h2 class="titulo-secao">Nossos <span>Amigos</span></h2>
+        <p class="subtitulo-secao">Navegue com as setas para conhecer alguns dos animais que esperam por um lar.</p>
+        
+        <div class="carrossel">
+            <button 
+              class="carrossel-botao carrossel-botao--esquerda" 
+              [class.is-hidden]="!mostrarBotaoAnterior"
+              (click)="slideAnterior()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            
+            <div class="carrossel-viewport">
+                <ul class="carrossel-trilha" #trilha [style.transform]="transformValue">
+                    <li class="animal-card" *ngFor="let animal of animais; let i = index" [attr.data-index]="i" #card>
+                        <div class="animal-card-conteudo">
+                            <img [src]="animal.imagens[0]" [alt]="'Foto de ' + animal.nome" class="animal-imagem" loading="lazy">
+                            <div class="animal-info">
+                                <h3 class="animal-nome">{{ animal.nome }}</h3>
+                                <p class="animal-detalhes">{{ animal.tags.slice(0, 3).join(' • ') }}</p> 
+                                <a [routerLink]="['/animal', animal.id]" class="botao-adotar">Quero Conhecer</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <button 
+              class="carrossel-botao carrossel-botao--direita" 
+              [class.is-hidden]="!mostrarBotaoProximo"
+              (click)="proximoSlide()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="secao-contato">
+   <div class="container">
+        <h2 class="titulo-secao">Fale <span>Conosco</span></h2>
+        <p class="subtitulo-secao">Tem alguma dúvida, sugestão ou quer saber mais sobre voluntariado? Preencha o formulário abaixo e entraremos em contato.</p>
+        <form class="formulario-contato" [formGroup]="contatoForm" (ngSubmit)="handleContatoSubmit()">
+            <div class="campo-grupo">
+                <label for="contato-nome" class="rotulo-form">Nome</label>
+                <input type="text" id="contato-nome" class="campo-form" placeholder="Digite seu nome completo" formControlName="nome">
+            </div>
+            <div class="campo-grupo">
+                <label for="contato-email" class="rotulo-form">Email</label>
+                <input type="email" id="contato-email" class="campo-form" placeholder="exemplo@email.com" formControlName="email">
+            </div>
+            <div class="campo-grupo campo-largura-total">
+                <label for="contato-assunto" class="rotulo-form">Assunto</label>
+                <input type="text" id="contato-assunto" class="campo-form" placeholder="Ex: Dúvida sobre o Rex" formControlName="assunto">
+            </div>
+            <div class="campo-grupo campo-largura-total">
+                <label for="contato-mensagem" class="rotulo-form">Mensagem</label>
+                <textarea id="contato-mensagem" name="mensagem" rows="5" class="campo-form" placeholder="Escreva aqui a sua mensagem..." formControlName="mensagem"></textarea>
+            </div>
+            <div class="campo-grupo campo-largura-total campo-checkbox">
+                <input type="checkbox" id="lgpd-contato" formControlName="lgpd">
+                <label for="lgpd-contato">Eu concordo com a <a routerLink="/privacidade" class="link-privacidade">Política de Privacidade</a>.</label>
+            </div>
+            <div class="campo-grupo campo-largura-total">
+                <button type="submit" class="botao-enviar" [disabled]="contatoForm.invalid || enviandoContato">
+                    {{ enviandoContato ? 'Enviando...' : 'Enviar Mensagem' }}
+                </button>
+            </div>
+            <div *ngIf="feedbackContato.mensagem" 
+                 class="feedback-mensagem campo-largura-total feedback-visivel"
+                 [class.sucesso]="feedbackContato.tipo === 'sucesso'"
+                 [class.erro]="feedbackContato.tipo === 'erro'">
+                {{ feedbackContato.mensagem }}
+            </div>
+        </form>
+    </div>
+</section>

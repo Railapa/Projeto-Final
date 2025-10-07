@@ -1,0 +1,4 @@
+<div id="cookie-banner" *ngIf="isVisible" [class.visible]="isVisible">
+    <p>Este site utiliza cookies para garantir a melhor experiência de navegação. Ao continuar, você concorda com a nossa <a routerLink="/privacidade" class="link-privacidade">Política de Privacidade</a>.</p>
+    <button id="aceitar-cookies" (click)="aceitarCookies()">Aceitar</button>
+</div>
